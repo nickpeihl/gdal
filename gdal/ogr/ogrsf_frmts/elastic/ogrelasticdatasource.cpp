@@ -580,7 +580,7 @@ bool OGRElasticDataSource::UploadFile( const CPLString &url,
     else
         papszOptions = CSLAddNameValue(papszOptions, "POSTFIELDS", data.c_str());
     papszOptions = CSLAddNameValue(papszOptions, "HEADERS",
-            "Content-Type: application/x-javascript; charset=UTF-8");
+            "Content-Type: application/json; charset=UTF-8");
 
     CPLHTTPResult* psResult = CPLHTTPFetch(url, papszOptions);
     CSLDestroy(papszOptions);
